@@ -1,14 +1,20 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'my-app',
-  template: '<h1>My First Angular 2 App</h1>'
+  selector: "my-app",
+  template: `<h1>{{title}}</h1>
+    <h2>{{carPort.name}}</h2>
+    <p>{{carPort.description}}</p>
+    <p>{{carPort.inStock}} in Stock</p>`
 })
-export class AppComponent { }
 
+export class AppComponent {
 
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/
+  title = "Ultra Racing";
+  carPort = {
+    "id": 1,
+    "name": "Super Tires",
+    "description": "These tires are the very best",
+    "inStock": 5
+  }
+}
