@@ -9,8 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var ScheduleComponent = (function () {
-    function ScheduleComponent() {
+var RacesComponent = (function () {
+    function RacesComponent() {
         this.heading = "Ultra Racing Schedule";
         this.races = [{
                 "id": 1,
@@ -35,7 +35,7 @@ var ScheduleComponent = (function () {
                 "isRacing": false
             }];
     }
-    ScheduleComponent.prototype.totalCost = function () {
+    RacesComponent.prototype.totalCost = function () {
         var totalFees = 0;
         for (var _i = 0, _a = this.races; _i < _a.length; _i++) {
             var race = _a[_i];
@@ -45,14 +45,14 @@ var ScheduleComponent = (function () {
         }
         return totalFees;
     };
-    ScheduleComponent = __decorate([
+    RacesComponent = __decorate([
         core_1.Component({
-            selector: "racing-app",
+            selector: "my-races",
             template: "\n  <h1>{{heading}}</h1>\n  <ul>\n    <li *ngFor=\"let race of races\">\n      <h2>{{race.name}} {{race.entryFee | currency:\"USD\":true }}</h2>\n      <p>{{race.date | date:\"MMM d, y, h:MM a\":true }}</p>\n      <p>{{race.about}}</p>\n      <button *ngIf=\"!race.isRacing\" >Enter Race</button>\n      <h3 *ngIf=\"race.isRacing\" >Already Racing</h3>\n    </li>\n  </ul>\n  <h2>Total cost: {{totalCost() | currency:\"USD\":true}}</h2>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], ScheduleComponent);
-    return ScheduleComponent;
+    ], RacesComponent);
+    return RacesComponent;
 }());
-exports.ScheduleComponent = ScheduleComponent;
-//# sourceMappingURL=schedule.component.js.map
+exports.RacesComponent = RacesComponent;
+//# sourceMappingURL=races.component.js.map

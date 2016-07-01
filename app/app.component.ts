@@ -1,16 +1,16 @@
 import { Component } from "@angular/core";
 
 import { CarPartsComponent } from "./car-parts.component";
-import { ScheduleComponent } from "./schedule.component";
+import { RacesComponent } from "./races.component.ts";
 
 @Component({
   selector: "my-app",
   template: `
     <h1>{{title}}</h1>
     <car-parts></car-parts>
-    <racing-app></racing-app>
+    <my-races></my-races>
   `,
-  directives: [CarPartsComponent,ScheduleComponent]
+  directives: [CarPartsComponent,RacesComponent]
 })
 
 export class AppComponent {

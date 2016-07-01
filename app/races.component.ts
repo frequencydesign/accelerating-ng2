@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-  selector: "racing-app",
+  selector: "my-races",
   template: `
   <h1>{{heading}}</h1>
   <ul>
@@ -17,7 +17,7 @@ import { Component } from "@angular/core";
   `
 })
 
-export class ScheduleComponent {
+export class RacesComponent {
   heading = "Ultra Racing Schedule";
   races = [{
     "id": 1,
