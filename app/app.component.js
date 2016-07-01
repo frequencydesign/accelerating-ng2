@@ -9,20 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var car_parts_component_1 = require("./car-parts.component");
+var schedule_component_1 = require("./schedule.component");
 var AppComponent = (function () {
     function AppComponent() {
         this.title = "Ultra Racing";
-        this.carPort = {
-            "id": 1,
-            "name": "Super Tires",
-            "description": "These tires are the very best",
-            "inStock": 5
-        };
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: "my-app",
-            template: "<h1>{{title}}</h1>\n    <h2>{{carPort.name}}</h2>\n    <p>{{carPort.description}}</p>\n    <p>{{carPort.inStock}} in Stock</p>"
+            template: "\n    <h1>{{title}}</h1>\n    <car-parts></car-parts>\n    <racing-app></racing-app>\n  ",
+            directives: [car_parts_component_1.CarPartsComponent, schedule_component_1.ScheduleComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
