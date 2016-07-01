@@ -8,13 +8,22 @@ import { Component } from "@angular/core";
   <ol>
     <li *ngFor="let carPart of carParts">
       <h2>{{carPart.name | uppercase}}</h2>
-      <p>{{carPart.description}}</p>
-      <p>{{carPart.price | currency:'EUR':true}}</p>
+      <p class="description">{{carPart.description}}</p>
+      <p class="price">{{carPart.price | currency:'EUR':true}}</p>
       <p *ngIf="carPart.inStock > 0">{{carPart.inStock}} in Stock</p>
       <p *ngIf="carPart.inStock === 0">Out of Stock</p>
     </li>
   </ol>
-  `
+  `,
+    styles: [`
+        .description {
+            color: #444;
+            font-size: small;
+        }
+        .price {
+            font-weight: bold;
+         }
+    `]
 })
 
 export class CarPartsComponent {
