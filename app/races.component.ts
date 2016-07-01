@@ -2,19 +2,8 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: "my-races",
-  template: `
-  <h1>{{heading}}</h1>
-  <ul>
-    <li *ngFor="let race of races">
-      <h2>{{race.name}} {{race.entryFee | currency:"USD":true }}</h2>
-      <p>{{race.date | date:"MMM d, y, h:MM a":true }}</p>
-      <p>{{race.about}}</p>
-      <button *ngIf="!race.isRacing" >Enter Race</button>
-      <h3 *ngIf="race.isRacing" >Already Racing</h3>
-    </li>
-  </ul>
-  <h2>Total cost: {{totalCost() | currency:"USD":true}}</h2>
-  `
+  templateUrl: "app/races.component.html",
+  styleUrls: ["app/races.component.css"]
 })
 
 export class RacesComponent {
