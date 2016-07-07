@@ -8,17 +8,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var races_mock_1 = require("./races-mock");
+//import { RACES } from "./races-mock";
 var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+require("rxjs/add/operator/map");
 var RaceService = (function () {
-    function RaceService() {
+    function RaceService(http) {
+        this.http = http;
     }
     RaceService.prototype.getRaces = function () {
-        return races_mock_1.RACES;
+        //return RACES;
+        return this.http.get("http://api.myjson.com/bins/5605v").map(function (response) { return response.json().racesData; });
     };
     RaceService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http])
     ], RaceService);
     return RaceService;
 }());

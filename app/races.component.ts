@@ -17,13 +17,16 @@ export class RacesComponent {
 
   ngOnInit() {
     //this.races = RACES;
-    this.races = this.raceService.getRaces();
+    //this.races = this.raceService.getRaces();
+    this.raceService.getRaces().subscribe(races => this.races = races);
   }
 
   totalCost() {
     let sum = 0;
-    for (let race of this.races) {
-      if (race.isRacing) sum += race.entryFee;
+    if (Array.isArray(this.races)) {
+      for (let race of this.races) {
+        if (race.isRacing) sum += race.entryFee;
+      }
     }
     return sum;
   }
