@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+//import { CARPARTS } from "./mocks";
 var racing_data_service_1 = require("./racing-data.service");
 var CarPartsComponent = (function () {
     function CarPartsComponent(racingDataService) {

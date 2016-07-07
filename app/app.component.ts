@@ -1,8 +1,10 @@
 import { Component } from "@angular/core";
 
 import { CarPartsComponent } from "./car-parts.component";
-import { RacesComponent } from "./races.component.ts";
 import {RacingDataService} from "./racing-data.service";
+
+import { RacesComponent } from "./races.component.ts";
+import {RaceService} from "./race.service";
 
 @Component({
   selector: "my-app",
@@ -12,7 +14,7 @@ import {RacingDataService} from "./racing-data.service";
     <my-races></my-races>
   `,
   directives: [CarPartsComponent,RacesComponent],
-  providers: [RacingDataService]
+  providers: [RacingDataService,RaceService]
 })
 
 export class AppComponent {
