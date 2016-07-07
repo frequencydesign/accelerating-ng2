@@ -1,0 +1,187 @@
+/* This would be bootstrap-custom.css */
+
+/* ----- Custom Theme ----- */
+
+html {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  height: 100%;
+}
+
+body {
+  background: -webkit-linear-gradient(#0d263c,#030714) no-repeat fixed;
+  background: linear-gradient(#0d263c,#030714) no-repeat fixed;
+  color: #ffffff;
+  height: 100%;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 400;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+header h1 {
+  color: #66d9f7;
+}
+
+.container {
+  max-width: 900px;
+}
+
+button {
+  background: #fd79fc;
+  border-radius: 3px;
+  border: 0;
+  color: #ffffff;
+  width: 120px;
+}
+
+.new-image {
+  height: 160px;
+}
+
+
+/*
+ *
+ *
+ * HACKED from course inspecting, don't understand how these got inserted
+ */
+
+
+
+h2 {
+   font-weight: 400;
+ }
+
+h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+h2 {
+  color: #9397d8;
+  font-size: 22px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 30px;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+.container {
+  max-width: 900px;
+}
+
+.button {
+  background: #fd79fc;
+  border-radius: 3px;
+  border: 0;
+  color: #ffffff;
+  width: 120px;
+}
+
+.button-cancel {
+  background: none;
+  border: 0;
+  color: #fd79fc;
+  text-decoration: underline;
+  width: 120px;
+}
+
+.card {
+  background: #24262c;
+}
+
+.date, .price {
+  color: #9397d8;
+}
+
+.description {
+  color: #66d9f7;
+}
+
+.panel-body {
+  display: table;
+  padding: 0;
+}
+
+.photo {
+  float: left;
+  margin-right: 30px;
+}
+
+.price {
+  margin: 0;
+  font-size: 18px;
+  text-align: center;
+  width: 120px;
+}
+
+.price-total {
+  background:  #9179b7;
+  float: right;
+  margin: 30px 0;
+  padding: 20px 50px;
+  text-transform: uppercase;
+}
+
+.price-total h3, .price-total p {
+  display: inline-block;
+  margin: 0;
+}
+
+.price-total p {
+  color: #362751;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.price-total h3 {
+  font-size: 18px;
+  margin-right: 60px;
+}
+
+.race-info {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.race-info td:last-child {
+  padding: 0 20px;
+}
+
+.race-info, .race-info tbody, .race-info tr, .race-info td {
+  width: 100%;
+}
+
+.race-info tbody {
+  display: inline-block;
+}
+
+.status {
+  color: #fd79fc;
+  text-align: center;
+}
+
+
+
+.unavailble {
+  background: #505050;
+}
+
+.unavailble .button {
+  background: #707070;
+  color: #aeaeae;
+}

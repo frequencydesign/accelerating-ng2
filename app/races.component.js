@@ -8,30 +8,44 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var races_mock_1 = require("./races-mock");
+var core_1 = require('@angular/core');
+var races_mock_1 = require('./races-mock');
 var RacesComponent = (function () {
     function RacesComponent() {
         this.heading = "Ultra Racing Schedule";
+        this.cash = 10000;
     }
     RacesComponent.prototype.ngOnInit = function () {
         this.races = races_mock_1.RACES;
     };
     RacesComponent.prototype.totalCost = function () {
-        var totalFees = 0;
+        var sum = 0;
         for (var _i = 0, _a = this.races; _i < _a.length; _i++) {
             var race = _a[_i];
-            if (race.isRacing) {
-                totalFees += race.entryFee;
-            }
+            if (race.isRacing)
+                sum += race.entryFee;
         }
-        return totalFees;
+        return sum;
+    };
+    RacesComponent.prototype.cashLeft = function () {
+        return this.cash - this.totalCost();
+    };
+    RacesComponent.prototype.cancelRace = function (race) {
+        race.isRacing = false;
+    };
+    RacesComponent.prototype.enterRace = function (race) {
+        if (this.cashLeft() > race.entryFee) {
+            race.isRacing = true;
+        }
+        else {
+            alert("You don't have enough cash");
+        }
     };
     RacesComponent = __decorate([
         core_1.Component({
-            selector: "my-races",
-            templateUrl: "app/races.component.html",
-            styleUrls: ["app/races.component.css"]
+            selector: 'my-races',
+            templateUrl: 'app/races.component.html',
+            styleUrls: ['app/races.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], RacesComponent);

@@ -1,15 +1,15 @@
-import { Component } from "@angular/core";
-import { Race } from "./race";
-import { RACES } from "./races-mock";
+import { Component } from '@angular/core';
+import { Race } from './race';
+import { RACES } from './races-mock';
 
 @Component({
-  selector: "my-races",
-  templateUrl: "app/races.component.html",
-  styleUrls: ["app/races.component.css"]
+  selector: 'my-races',
+  templateUrl: 'app/races.component.html',
+  styleUrls:['app/races.component.css']
 })
-
 export class RacesComponent {
-  heading = "Ultra Racing Schedule";
+  heading = "Ultra Racing Schedule"
+  cash = 10000;
   races: Race[];
 
   ngOnInit() {
@@ -17,12 +17,26 @@ export class RacesComponent {
   }
 
   totalCost() {
-    let totalFees = 0;
+    let sum = 0;
     for (let race of this.races) {
-      if (race.isRacing) {
-        totalFees += race.entryFee;
-      }
+      if (race.isRacing) sum += race.entryFee;
     }
-    return totalFees;
+    return sum;
+  }
+
+  cashLeft() {
+    return this.cash - this.totalCost();
+  }
+
+  cancelRace(race: Race) {
+    race.isRacing = false;
+  }
+
+  enterRace(race: Race) {
+    if(this.cashLeft() > race.entryFee) {
+      race.isRacing = true;
+    } else {
+      alert("You don't have enough cash");
+    }
   }
 }
