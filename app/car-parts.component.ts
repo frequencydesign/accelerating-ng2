@@ -16,7 +16,8 @@ export class CarPartsComponent {
 
     ngOnInit() {
         //this.carParts = CARPARTS;
-        this.carParts = this.racingDataService.getCarParts();
+        //this.carParts = this.racingDataService.getCarParts();
+        this.racingDataService.getCarParts().subscribe(carParts => this.carParts = carParts);
     }
 
     upQuantity(carPart: CarPart) {
@@ -41,7 +42,17 @@ export class CarPartsComponent {
          return prev + current.inStock;
          }, 0);
          */
-        return this.carParts.reduce((prev, current) => prev + current.inStock, 0);
+
+        // return this.carParts.reduce((prev, current) => prev + current.inStock, 0);
+
+        if (Array.isArray(this.carParts)) {
+            let sum = 0;
+            for (let carPart of this.carParts) {
+                sum += carPart.inStock
+            }
+            return sum;
+        }
+
     }
 
 }

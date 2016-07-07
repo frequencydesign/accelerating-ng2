@@ -13,6 +13,7 @@ var car_parts_component_1 = require("./car-parts.component");
 var racing_data_service_1 = require("./racing-data.service");
 var races_component_ts_1 = require("./races.component.ts");
 var race_service_1 = require("./race.service");
+var http_1 = require("@angular/http");
 var AppComponent = (function () {
     function AppComponent() {
         this.title = "Ultra Racing";
@@ -22,7 +23,7 @@ var AppComponent = (function () {
             selector: "my-app",
             template: "\n    <h1>{{title}}</h1>\n    <car-parts></car-parts>\n    <my-races></my-races>\n  ",
             directives: [car_parts_component_1.CarPartsComponent, races_component_ts_1.RacesComponent],
-            providers: [racing_data_service_1.RacingDataService, race_service_1.RaceService]
+            providers: [racing_data_service_1.RacingDataService, race_service_1.RaceService, http_1.HTTP_PROVIDERS]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
