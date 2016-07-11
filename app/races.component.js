@@ -34,6 +34,9 @@ var RacesComponent = (function () {
         }
         return sum;
     };
+    RacesComponent.prototype.castDate = function (date) {
+        return new Date(date.toString());
+    };
     RacesComponent.prototype.cashLeft = function () {
         return this.cash - this.totalCost();
     };

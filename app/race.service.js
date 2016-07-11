@@ -8,7 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-//import { RACES } from "./races-mock";
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
@@ -18,7 +17,8 @@ var RaceService = (function () {
     }
     RaceService.prototype.getRaces = function () {
         //return RACES;
-        return this.http.get("http://api.myjson.com/bins/5605v").map(function (response) { return response.json().racesData; });
+        return this.http.get("http://api.myjson.com/bins/qcv3").map(function (response) { return response.json().racesData; });
+        //return this.http.get("./app/races-mock.json").map(response => <Race[]>response.json().racesData);
     };
     RaceService = __decorate([
         core_1.Injectable(), 
